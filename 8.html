@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        li {
+            border-bottom: solid 1px black;
+        }
+
+        p {
+            display: none;
+        }
+
+        /* active 클래스를 가진 li 안에 있는 p */
+        li.active p {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <span>김채원</span>
+            <p>Kim CheaeWon</p>
+        </li>
+        <li>
+            <span>허윤진</span>
+            <p>Heo YunJin</p>
+        </li>
+    </ul>
+    <script>
+        $(function () {
+            $("li").click(function () {
+                $("li").removeClass("active");
+
+                // 이 방법처럼 가장 상위 클래스에 active를 걸어주는 것이 좋다.
+                $(this).addClass("active");
+            })
+        });
+    </script>
+</body>
+
+</html>

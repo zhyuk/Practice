@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        .icon-like {
+            color: gray;
+        }
+
+        .icon-like.active {
+            color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="like-box">
+        <button type="button" class="btn-like">like</button>
+        <!-- 부수적인 요인은 span -->
+        <span class="icon-like">♥</span>
+    </div>
+    <div class="like-box">
+        <button type="button" class="btn-like">like</button>
+        <span class="icon-like">♥</span>
+    </div>
+    <div class="like-box">
+        <button type="button" class="btn-like">like</button>
+        <span class="icon-like">♥</span>
+    </div>
+
+    <script>
+        $(function () {
+            $(".btn-like").click(function () {
+                // 내가 누른 요소 다음에 있는(형제요소)에 active 클래스 값을 추가/제거한다.
+                $(this).next().toggleClass("active");
+            })
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+        }
+
+        body.red {
+            background-color: red;
+        }
+
+        body.green {
+            background-color: green;
+        }
+
+        body.blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" class="red">Red</button>
+    <button type="button" class="green">Green</button>
+    <button type="button" class="blue">Blue</button>
+
+    <script>
+        $(function () {
+            $(".red").click(function () {
+                // body에 있는 모든 클래스 제거
+                $("body").removeClass();
+                $("body").addClass("red");
+            });
+            $(".green").click(function () {
+                $("body").removeClass();
+                $("body").addClass("green");
+            });
+            $(".blue").click(function () {
+                $("body").removeClass();
+                $("body").addClass("blue");
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        li.active {
+            background-color: red;
+        }
+
+        li.over {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>첫번째</li>
+        <li class="class">두번째</li>
+        <li>세번째</li>
+        <li id="id">네번째</li>
+        <li>다섯번째</li>
+    </ul>
+
+    <script>
+        // document가 준비가 되면 기능을 실행해주세요. / jQuery 사용 시 기본세팅으로 해주는 것이 좋다.
+        $(function () {
+            $("li").click(function () {
+                // addClass 대신 toggleClass 사용 시 클릭마다 추가/제거 가능
+                // $(this).addClass("active");
+                $(this).toggleClass("active");
+            });
+
+            $(".class").hover(function () {
+                $(".class").toggleClass("over");
+            });
+
+            $("li").hover(function () {
+                $(this).toggleClass("active");
+            });
+
+        });
+    </script>
+</body>
+
+</html>
