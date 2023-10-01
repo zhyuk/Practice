@@ -1,0 +1,75 @@
+/* === font === */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+/* === common === */
+body {background: #000; color: #fff; font-family: "Pretendard Variable";}
+header {width: 100%; height: 80px; padding: 30px; display: flex; align-items: center; justify-content: space-between; border-bottom: solid .8px #fff;}
+main {width: 100%; margin: 0 auto;}
+
+/* === public === */
+#wrap {max-width: 2560px; width: 100%;}
+.sans {font-family: "Noto sans",serif;}
+.clear {clear: both;}
+
+/* === header === */
+header img {width: 200px;}
+header img:hover {cursor: pointer;}
+
+.btn-menu {width: 40px; height: 30px; cursor: pointer; position: relative; z-index: 2; animation: bounce .5s infinite;}
+.btn-menu span {background: #fff; width: 40px; height: 6px; display: block; position: absolute;}
+.btn-menu span:nth-child(1) {top: 0;}
+.btn-menu span:nth-child(2) {top: 12px;}
+.btn-menu span:nth-child(3) {top: 24px;}
+
+.btn-menu:hover {animation-play-state: paused;}
+.btn-menu:hover span {background: #ADFF2E;}
+
+.btn-menu.active span:nth-child(1) {animation: active_left .2s forwards; -webkit-animation: active_left .2s forwards; -moz-animation: active_left .2s forwards; -o-animation: active_left .2s forwards;}
+.btn-menu.active span:nth-child(2) {animation: run .2s ease-in-out; -webkit-animation: run .2s ease-in-out forwards; -moz-animation: run .2s ease-in-out forwards; -o-animation: run .2s ease-in-out forwards;}
+.btn-menu.active span:nth-child(3) {animation: active_right .2s forwards; -webkit-animation: active_right .2s forwards; -moz-animation: active_right .2s forwards; -o-animation: active_right .2s forwards;}
+
+#gnb {width: 100%; height: 100vh; position: absolute; top: 0; left: 0; background: rgba(0, 0, 0, 0.8); display: none; font-size:80px; padding: 100px; z-index: 1;}
+#gnb li {margin: 120px 40px; border-bottom: dotted 2px #fff; font-weight: 900;}
+#gnb li:hover {border-bottom: dotted 2px #ADFF2E; cursor: pointer;}
+#gnb a:hover {color: #ADFF2E;}
+
+#gnb.active {display: block;}
+
+/* === main === */
+main img.index-img {width: 100%;}
+main .index-bg {width: 80%; margin: 0 auto; margin-top: 50px; position: relative; text-align: center;}
+main .index-bg img {display: block; margin: 0 auto;}
+main .index-bg h1 {position: absolute; top: 50%; left: 50%; transform: translate(-50%); font-size: 80px; font-weight: 900; opacity: 0;}
+main .index-bg:hover h1 {animation: img_resize .5s forwards;}
+
+/* === footer === */
+footer {width: 100%; height: 50px; background: #1f1f1f; margin-top: 30px; display: flex; align-items: center ;justify-content: space-between; padding: 0 30px;}
+footer h1 {color: rgb(117, 117, 117);}
+
+/* === animation === */
+@keyframes bounce {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.95);}
+    50% {transform: scale(1.05);}
+    50% {transform: scale(0.95);}
+    100% {transform: scale(1);}
+}
+@keyframes run {
+    0% {left: 0;}
+    99% {left: -100px;}
+    100% {opacity: 0;}
+}
+@keyframes active_left {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(45deg); top: 15px;}
+}
+@keyframes active_right {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-45deg); top: 15px;}
+}
+
+@keyframes img_resize {
+    0% {width: 0%;}
+    99% {width: 100%; opacity: 0;}
+    100% {opacity: 1;}
+}
