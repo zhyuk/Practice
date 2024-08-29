@@ -1,0 +1,47 @@
+#React
+- Naver Vibe, Flipkart, instagram 등 페이지 전환이 새로고침없이 부드럽게 동작하는 사이트들을 Single Page Application이라고 합니다.
+* Single Page Application
+        - html 파일은 1개만 사용 
+        - 다른 페이지를 보여주고 싶을 때 html 부분만 갈아치워서 보여준다. ==> 따라서 부드럽게 동작함.
+
+- html을 함수, array, object 이런 곳에서 보관,재사용이 가능하여 큰 프로젝트일수록 html 관리가 편리하다.
+
+- 리액트는 App.js가 html의 index.html과 같음.
+    
+# JSX 언어 : .js파일에서 html을 쉽게 작성하도록 사용하는 html 대용품
+    원래 리액트에서 <div>만드는 방법 : React.createElement('div', null, 'Hello World')로 작성해야함. -> 이것을 편리하게 도와주는 것이 JSX언어임
+
+# JSX 문법]
+    1. class 넣을 땐 className으로 작성. 
+    => class는 클래스 선언하는 것과 동일하기 때문에 겹침.
+
+    2. 변수넣을 땐 {}(중괄호) 사용. = 데이터바인딩은 {}(중괄호) 사용
+    => 변수에 있는 자료를 html에 넣고싶을 때, JS
+    let post = '강남 우동 맛집';
+    document.getElementByTagName('p')[0].innerHTML = post;
+    리액트는 그냥 <p>{post}</p>처럼 원하는 자리에 넣으면 됨.
+
+    3. style 넣을 땐 style={} 사용. 다만 오브젝트 자료형으로 넣어줘야함.
+    * 속성은 카멜기법으로 작성.
+    => <p style={{color:'red', fontSize: '16px'}}>{post}</p>
+
+
+* return 소괄호 내에는 병렬로 태그 2개 이상 기입금지. 딱 하나의 자식요소만 있어야함.
+
+# State
+    - 자료를 잠깐 저장할 때 사용
+    [사용법]
+    1. import {useState} from 'react'; 입력
+    2. let [a,b] = useState(잠깐 저장하고 싶은 값);
+        a : state에 보관했던 값
+        b : state 변경을 도와주는 함수
+
+    * 자바스크립트의 Destructuring 문법
+    let num = [1, 2];
+    let [a, c] = [1, 2]; // a = 1, c = 2  -> Destructuring 문법
+    let a = num[0]; // a = 1
+    let c = num[1]; // c = 2
+
+    State 쓰는 이유 ? 
+        : 일반 변수는 값이 변경되면 html에 자동으로 반영안됨. -> State는 값이 변경되면 자동으로 html이 재렌더링됨.
+    ==> 값이 자주 변경되는 상품명, 글제목, 가격 등의 데이터를 다룰 때 State로 처리하는 것이 좋다. 로고의 이름은 바꿀 일이 거의 없기 때문에 굳이 State 처리할 필요가 없다.

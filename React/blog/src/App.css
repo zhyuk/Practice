@@ -2,6 +2,24 @@
   text-align: center;
 }
 
+.black-nav {
+  display: flex;
+  background: black;
+  width: 100%;
+  color: white;
+  padding-left: 20px;
+}
+
+div {
+  box-sizing: border-box;
+}
+.list {
+  padding-left: 20px;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+.list > p {font-size: 14px;}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,11 +53,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.nav {
-  display: flex;
-  background-color: #000;
-  color: #FFF;
-  padding-left: 20px;
 }
