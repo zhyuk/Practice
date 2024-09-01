@@ -20,6 +20,15 @@ div {
 }
 
 .list > p {font-size: 14px;}
+
+span {cursor: pointer;}
+
+div.modal {
+  margin-top: 20px;
+  padding: 20px;
+  background: lightblue;
+  text-align: left;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
