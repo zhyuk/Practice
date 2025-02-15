@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZHYUK</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="../css/portfolio.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div id="hd-wrap">
+                <div class="hd-content hd-left">
+                    <img src="../img/main_logo_orange.png" alt="">
+                </div>
+                <div class="hd-content hd-center">
+                    <nav>
+                        <ul class="hd-main-menu">
+                            <li>회사소개</li>
+                            <li>사업영역</li>
+                            <li>설비현황</li>
+                            <li>채용정보</li>
+                            <li>홍보센터</li>
+                            <li>문의하기</li>
+                            <li>Family Site</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="hd-content hd-right">
+                    <span>한국어</span>
+                </div>
+            </div>
+        </header>
+
+        <script>
+            window.addEventListener('scroll', () => {
+                let scrollY = window.scrollY;
+                // console.log(scrollY);
+
+                if (scrollY > 50) {
+                    // document.getElementsByTagName('header')[0].style.background = 'rgba(0, 0, 0, 0.6)';
+                    document.getElementsByTagName('header')[0].style.background = 'var(--color-white)';
+                    document.querySelectorAll('.hd-content').forEach(element => {
+                        element.style.color = 'var(--color-blk)';
+                    })
+                    document.querySelector('.hd-right span').classList.add('color-change');
+                } else {
+                    document.getElementsByTagName('header')[0].style.background = 'transparent';
+                    document.querySelectorAll('.hd-content').forEach(element => {
+                        element.style.color = 'var(--color-white)';
+                    })
+                    document.querySelector('.hd-right span').classList.remove('color-change');
+                }
+            });
+        </script>
+
+        <main>
+            <section>
+                <div class="visual-box">
+                    <div class="visual-content">
+                        <div class="visual-text">
+                            <h1 data-aos="fade-up" data-aos-delay="500">BUILDING THE FUTURE</h1>
+                            <p>우리는 끊임없는 연구와 기술 개발로 고객과 함께<br>
+                                더 큰 미래를 향해 나아가고 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="img-section">
+                <div class="test-box">
+                    <img class="mockup" src="../img/mockup05.png" alt="목업이미지">
+                    <div class="drug-box">
+                        <img data-aos="fade-left" data-aos-delay="1500" src="../img/drug01.png" alt="약 정보이미지">
+                        <img data-aos="fade-left" data-aos-delay="1000" src="../img/drug02.png" alt="약 정보이미지">
+                        <img data-aos="fade-left" data-aos-delay="500" src="../img/drug03.png" alt="약 정보이미지">
+                        <img data-aos="fade-down" src="../img/drug04.png" alt="약 정보이미지">
+                        <img data-aos="fade-right" data-aos-delay="500" src="../img/drug05.png" alt="약 정보이미지">
+                        <img data-aos="fade-right" data-aos-delay="1000" src="../img/drug06.png" alt="약 정보이미지">
+                        <img data-aos="fade-right" data-aos-delay="1500" src="../img/drug07.png" alt="약 정보이미지">
+                    </div>
+                </div>
+            </section>
+
+            <section></section>
+        </main>
+    </div>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
