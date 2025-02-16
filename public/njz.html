@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>njz Official</title>
+    <link rel="stylesheet" href="../css/njz.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <video src="../img/njz/main_logo.mp4" autoplay loop muted></video>
+    </section>
+
+    <section class="slide">
+        <ul>
+            <li class="minji">
+                <div class="visual"></div>
+            </li>
+            <li class="hani">
+                <div class="visual"></div>
+            </li>
+            <li class="danielle">
+                <div class="visual"></div>
+            </li>
+            <li class="haerin">
+                <div class="visual"></div>
+            </li>
+            <li class="hyein">
+                <div class="visual"></div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="scroll horizontal-scroll__section">
+        <div class="inner">
+            <div class="horizontal-scroll__wrapper">
+                <div class="scroll-box horizontal-scroll__content">
+                    <div class="about__item">
+                        <img src="../img/njz/minji.png">
+                        <div class="content">
+                            <h2>MINJI</h2>
+                        </div>
+                    </div>
+
+                    <div class="about__item">
+                        <img src="../img/njz/hani.png">
+                        <div class="content">
+                            <h2>HANI</h2>
+                        </div>
+                    </div>
+
+                    <div class="about__item">
+                        <img src="../img/njz/danielle.png">
+                        <div class="content">
+                            <h2>DANIELLE</h2>
+                        </div>
+                    </div>
+
+                    <div class="about__item">
+                        <img src="../img/njz/haerin.png">
+                        <div class="content">
+                            <h2>HAERIN</h2>
+                        </div>
+                    </div>
+
+                    <div class="about__item">
+                        <img src="../img/njz/hyein.png">
+                        <div class="content">
+                            <h2>HYEIN</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            //섹션과 컨텐츠 선택자
+            const scrollSection = $('.horizontal-scroll__section');
+            const scrollContent = $('.horizontal-scroll__content');
+
+            //섹션 높이와 컨텐츠 너비 구함
+            const scrollHeight = scrollSection.height();
+            const contentWidth = scrollContent.width();
+
+            //스크롤 이벤트를 감지
+            $(document).on('scroll', function () {
+                //현재 스크롤된 위치 계산
+                const scrolled = $(window).scrollTop();
+                //섹션의 offset 절대값 계산
+                const sectionOffset = Math.abs(scrollSection.offset().top - scrolled);
+                //바닥을 아직 도달하지 않았는지 확인
+                const notReachedBottom = parseInt(Math.max(0, scrollSection[0].getBoundingClientRect().bottom - $(window).height()));
+
+                //섹션 오프셋이 최소값을 초과했고 아직 바닥을 도달하지 않은 경우에 애니메이션을 실행함.
+                if (scrollSection.offset().top <= scrolled && notReachedBottom) {
+                    gsap.to(scrollContent, {
+                        x: -sectionOffset
+                    });
+                }
+            });
+            //hero 효과 작성
+            const heroTween = function (background) {
+                const tl = gsap.timeline();
+
+                //백그라운드 높이 조절 애니메이션 설정
+                tl.to(background, {
+                    height: '100%',
+                    ease: 'power3.easeOut'
+                });
+
+                return tl;
+            };
+        });
+    </script>
+
+    <section></section>
+
+    <div id="modal">
+        <button class="cancel">X</button>
+
+        <div class="content-area">
+
+        </div>
+    </div>
+
+    <script>
+        const profile = [
+            document.getElementsByClassName("minji")[0],
+            document.getElementsByClassName("hani")[0],
+            document.getElementsByClassName("danielle")[0],
+            document.getElementsByClassName("haerin")[0],
+            document.getElementsByClassName("hyein")[0]
+        ];
+        const modal = document.getElementById("modal");
+
+        profile.forEach((person) => {
+            person.addEventListener("click", () => {
+                modal.style.display = modal.style.display === "none" ? "block" : "none";
+            });
+        });
+
+
+        document.querySelector("div#modal button.cancel").addEventListener("click", (event) => {
+            modal.style.display = "none";
+        });
+    </script>
+    <footer>
+        <div class="ft-inner">
+            <p>&copy; 2025 njz All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>
